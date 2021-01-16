@@ -6,7 +6,7 @@ import OfficerCard from "./OfficerCard";
 import officersData from "./officers.js";
 
 const useStyles = makeStyles((theme) => ({
-  officersBannerContainer: {
+  officerBannerRoot: {
     width: "100%",
     marginBottom: 15,
     display: "flex",
@@ -14,17 +14,14 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     maxWidth: 1000
   },
-  cardRow: {
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center"
-  },
   divider: {
     backgroundColor: '#5967b0',
     width: 80,
     height: 5,
     marginBottom: 10
+  },
+  officerCardContainer: {
+    justifyContent: "center"
   }
 }));
 
@@ -33,7 +30,7 @@ function OfficersBanner() {
   //for later: use hooks to update number of rows depending on screen size
 
   return (
-    <section id="officers-section" className={classes.officersBannerContainer}>
+    <section id="officers-section" className={classes.officerBannerRoot}>
       <Typography color="textPrimary" component='h2' variant='h2'>Officers</Typography>
       <div className={classes.divider}></div>
       <Grid container className={classes.officerCardContainer}>

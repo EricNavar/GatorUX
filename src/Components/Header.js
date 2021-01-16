@@ -19,23 +19,27 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('sm')]: {
       paddingLeft: 12,
       paddingRight: 12
+    },
+    [theme.breakpoints.down('xs')]: {
+      borderRadius: 8,
+      margin: 8,
+      width: "calc(100% - 16px)",
     }
-  },
-  toolbar: {
   },
   scrolled: {
-    background: "#fff",
     boxShadow: "0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
-    "& h3": {
-      color: "#000000"
-    }
+    [theme.breakpoints.down('xs')]: {
+      backgroundColor: "#000",
+    },
+    [theme.breakpoints.up('sm')]: {
+      backgroundColor: "#fff",
+      color: "#000"
+    },
   },
   //when the navbar is at the top of the screen and is white
   top: {
     background: "rgba(0,0,0,0)",
-    "& h3": {
-      color: "#000000"
-    }
+    color: "#000000"
   },
   HeaderLogo: {
     width: 'calc(var(--header-height) - 20px)',
@@ -53,6 +57,11 @@ const useStyles = makeStyles(theme => ({
     marginLeft: 12,
     marginRight: 12,
     backgroundColor: "#000"
+  },
+  toolbar: {
+    [theme.breakpoints.down('xs')]: {
+      justifyContent: "center"
+    }
   }
 }));
 
@@ -99,7 +108,7 @@ export default function NavBar(props) {
                 src={GatorUXLogo}
                 alt=""
                 className={classes.HeaderLogo}
-              />
+                />
             </ButtonBase>
             <Typography component='h3' className={classes.HeaderTitle}>
               Gator UX

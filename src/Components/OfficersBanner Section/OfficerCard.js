@@ -9,7 +9,8 @@ const useStyles = makeStyles(theme => ({
     flexDirection: "column",
     alignItems: "center",
     margin: "20px 0px",
-    textAlign: 'center'
+    textAlign: 'center',
+    lineHeight: 1.2
   },
   officerImgContainer: {
     width: "10rem",

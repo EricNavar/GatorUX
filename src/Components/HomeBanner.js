@@ -10,7 +10,7 @@ const useStyles = makeStyles({
     backgroundImage: "url(" + SplashImage + ")",
     textAlign: 'center',
     backgroundSize: "cover",
-    backgroundPositionY: "center"
+    backgroundPosition: "center"
   },
   homeBanner: {
     display: "flex",
@@ -44,7 +44,7 @@ export default function HomeBanner() {
     <section id="image-container" className={classes.homeBannerContainer}>
       <div className={classes.homeBanner}>
         <div className={classes.darkBackgroundWrapper}>
-          <Typography variant='h1' component='h1'>
+          <Typography variant='h1' component='h1' style={{lineHeight: 1.1}}>
             All Things User Experience
           </Typography>
         </div>

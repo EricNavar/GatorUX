@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: 20,
     fontSize: 20,
     [theme.breakpoints.down('xs')]: {
-      maxWidth: 'calc(100vw - 18px)'
+      maxWidth: 'calc(100vw - 24px)'
     }
   },
   divider: {
