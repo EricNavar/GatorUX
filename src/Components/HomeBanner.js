@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from '@material-ui/core/Typography';
 import SplashImage from './../assets/SplashScreen.jpg';
+import ScrollDownIcon from "./ScrollDownIcon.js";
 
 const useStyles = makeStyles({
   homeBannerContainer: {
@@ -53,6 +54,7 @@ export default function HomeBanner() {
           <Typography className={classes.meetingInfo}>Fridays, 7:00pm over Zoom</Typography>
         </div>
       </div>
+      <ScrollDownIcon />
     </section>
   );
 }
