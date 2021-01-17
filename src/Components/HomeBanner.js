@@ -18,7 +18,7 @@ const useStyles = makeStyles({
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "column",
-    minHeight: "calc(100vh - var(--header-height))",
+    minHeight: "100vh",
     margin: "auto 0px",
     color: "white"
   },
@@ -53,8 +53,8 @@ export default function HomeBanner() {
           <Typography className={classes.semesterLine}>Spring 2021 Meetings</Typography>
           <Typography className={classes.meetingInfo}>Fridays, 7:00pm over Zoom</Typography>
         </div>
+        <ScrollDownIcon />
       </div>
-      <ScrollDownIcon />
     </section>
   );
 }

@@ -1,5 +1,6 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
+import Hidden from "@material-ui/core/Hidden";
 
 const useStyles = makeStyles({
   scrolldownWrapper: {
@@ -60,18 +61,29 @@ const useStyles = makeStyles({
   }
 });
 
-function Footer() {
+function ScrollDownIcon() {
+  const [scrolled,setScrolled] = React.useState(false);
+  React.useEffect(() => {
+    const onScroll = e => {
+      setScrolled(true);
+    };
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   const classes = useStyles();
   return (
-      <div id="scroll-down-icon" class={classes.scrolldownWrapper}>
-        <div class={classes.scrolldown}>
+    <Hidden xsDown smUp={scrolled}>
+      <div id="scroll-down-icon" className={classes.scrolldownWrapper}>
+        <div className={classes.scrolldown}>
           <svg height="30" width="10">
-            <circle class={classes.scrolldownDot} cx="5" cy="10" r="1.5" />
-            <circle class={`${classes.scrolldownDot} ${classes.scrolldownDot2}`} cx="5" cy="10" r="1.5" />
+            <circle className={classes.scrolldownDot} cx="5" cy="10" r="1.5" />
+            <circle className={`${classes.scrolldownDot} ${classes.scrolldownDot2}`} cx="5" cy="10" r="1.5" />
           </svg>
         </div>
       </div>
+    </Hidden>
   );
 }
 
-export default Footer;
+export default ScrollDownIcon;
