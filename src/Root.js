@@ -10,7 +10,7 @@ import Footer from "./Components/Footer.js";
 export default function Root() {
   const myTheme = createMuiTheme({
     palette: {
-      type: 'dark',
+      type: 'dark'
     },
     typography: {
       fontFamily: [
@@ -43,8 +43,6 @@ export default function Root() {
       }
     }
   });
-
-  console.log(myTheme)
 
   return (
     <BrowserRouter>

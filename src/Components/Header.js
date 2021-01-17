@@ -108,7 +108,7 @@ export default function NavBar(props) {
                 src={GatorUXLogo}
                 alt=""
                 className={classes.HeaderLogo}
-                />
+              />
             </ButtonBase>
             <Typography component='h3' className={classes.HeaderTitle}>
               Gator UX
