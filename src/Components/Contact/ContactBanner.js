@@ -29,6 +29,10 @@ const useStyles = makeStyles({
     width: 80,
     height: 5,
     marginBottom: 10
+  },
+  emailContainer: {
+    display: "flex",
+    alignItems: "center"
   }
 });
 
