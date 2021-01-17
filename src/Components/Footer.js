@@ -64,26 +64,23 @@ function Footer() {
     <footer className={classes.FooterContainer}>
       <Grid container style={{maxWidth:450}}>
         {social_links.map((elem, index) => (
-          <ButtonBase
-            className={classes.FooterSocialContainer}
-            key={`${elem.name}-${index}-footer-container`}
-            href={elem.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            component={Grid}
-            item
-            xs={6}
-            sm={3}
-          >
-            <img
-              src={elem.logo}
-              alt={elem.name + "logo"}
-              className={classes.FooterSocialLogo}
-            />
-            <Typography color="textPrimary" component ='h3' className={classes.FooterSocialDescription}>
-              {elem.name}
-            </Typography>
-          </ButtonBase>
+          <Grid item  xs={6} sm={3} key={`${elem.name}-${index}-footer-container`}>
+            <ButtonBase
+              className={classes.FooterSocialContainer}
+              href={elem.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={elem.logo}
+                alt={elem.name + "logo"}
+                className={classes.FooterSocialLogo}
+              />
+              <Typography color="textPrimary" component ='h3' className={classes.FooterSocialDescription}>
+                {elem.name}
+              </Typography>
+            </ButtonBase>
+          </Grid>
         ))}
       </Grid>
     </footer>
