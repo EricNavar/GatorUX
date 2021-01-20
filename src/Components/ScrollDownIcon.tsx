@@ -64,11 +64,12 @@ const useStyles = makeStyles({
 export default function ScrollDownIcon() {
   const [scrolled,setScrolled] = React.useState(false);
   React.useEffect(() => {
-    function onScroll() {
+    function onScroll(event:any) {
+      event.preventDefault();
       setScrolled(true);
     };
-    window.addEventListener("scroll", onScroll, {passive:true});
-    return () => window.removeEventListener("scroll", onScroll);
+    document.addEventListener("scroll", onScroll, {passive:true});
+    return () => document.removeEventListener("scroll", onScroll);
   }, []);
 
   const classes = useStyles();
