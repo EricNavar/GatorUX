@@ -45,8 +45,6 @@ export default function Root() {
     }
   });
 
-  const renderLoader = () => <CircularProgress/>;
-
   return (
     <BrowserRouter>
       <ThemeProvider theme={myTheme}>
@@ -55,8 +53,8 @@ export default function Root() {
           <Route exact path="/" component={HomePage} />
           <Redirect to="/" />
         </Switch>
-        <Suspense fallback={renderLoader}>
-          <Footer />
+        <Suspense defer fallback={<CircularProgress/>}>
+          <Footer defer/>
         </Suspense>
       </ThemeProvider>
     </BrowserRouter>

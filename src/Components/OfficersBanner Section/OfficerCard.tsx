@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Suspense} from "react";
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
@@ -52,7 +52,9 @@ export default function OfficerCard(props: Props) {
   return (
     <Grid item xs={6} sm={4} className={classes.officerCard}>
       <div className={classes.officerImgContainer}>
-        <img src={imgSrc} alt={officerName + " picture"} className={classes.officerImg} />
+        <Suspense fallback={<div/>}>
+          <img src={imgSrc} alt={officerName + " picture"} className={classes.officerImg} />
+        </Suspense>
       </div>
       <Typography color="textPrimary" component='h3' variant='h5' className={classes.officerName}>{officerName}</Typography>
       <Typography color="textSecondary" component='h5' variant='overline' className={classes.officerPosition}>{officerPosition}</Typography>

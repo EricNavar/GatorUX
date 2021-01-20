@@ -1,8 +1,8 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import AboutUsCarousel from './AboutUsCarousel';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+const AboutUsCarousel = lazy(() => import('./AboutUsCarousel'));
 
 const useStyles = makeStyles((theme: Theme) => 
   createStyles({
@@ -67,7 +67,9 @@ export default function AboutUs() {
         </Typography>
       </Grid>
       <Grid item xs={12} sm={6} style={{textAlign: 'center', display: 'contents'}}>
-        <AboutUsCarousel/>
+        <Suspense fallback={<div/>}>
+          <AboutUsCarousel/>
+        </Suspense>
       </Grid>
     </Grid>
   );
