@@ -4,16 +4,20 @@ import SplashImage from './../assets/SplashScreen.jpg';
 
 const useStyles = makeStyles({
   splashImage: {
-    height: "100vh",
-    width: "inherit",
-    position: "absolute",
-    zIndex: 0
+    width: "100%",
+    minHeight: "100vh",
+    backgroundImage: "url(" + SplashImage + ")",
+    textAlign: 'center',
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    zIndex: 0,
+    position: "absolute"
   }
 });
 
 export default function SplashImageComponent() {
   const classes = useStyles();
   return (
-    <img src={SplashImage} alt="Splash" className={classes.splashImage}/>
+    <div className={classes.splashImage} />
   );
 }
