@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
+import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import AboutUs from "../Components/AboutUs Section/AboutUs";
 import HomeBanner from "../Components/HomeBanner";
 import OfficersBanner from "../Components/OfficersBanner Section/OfficersBanner";
 import ContactBanner from "../Components/Contact/ContactBanner";
-import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme: Theme) => 
   createStyles({

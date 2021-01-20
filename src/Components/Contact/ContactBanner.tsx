@@ -37,7 +37,7 @@ const useStyles = makeStyles({
 });
 
 function ContactBanner() {
-  const copyEmail = (e:any) => {
+  const copyEmail = () => {
     // copies the email prop into the user's clipboard
     copy("email@ufl.edu");
 

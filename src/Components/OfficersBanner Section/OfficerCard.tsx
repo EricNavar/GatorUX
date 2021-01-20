@@ -48,7 +48,6 @@ interface Props {
 }
 function OfficerCard(props: Props) {
   const {officerName, officerPosition, imgSrc} = props;
-  console.log(props);
   const classes = useStyles();
   return (
     <Grid item xs={6} sm={4} className={classes.officerCard}>

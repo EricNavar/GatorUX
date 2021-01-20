@@ -1,5 +1,5 @@
 # Gator UX Website
-- This is a static React web-app that will become Society of Software Developer's website in the future (Right now, this is the website: ufssd.org)
+- This is just a little website I made to practice UX design and Typescript
 - This project will use Material-UI just to make pretty components quicker to build: https://material-ui.com/
 
 # Contribution Guide

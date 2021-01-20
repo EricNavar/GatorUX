@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import ButtonBase from "@material-ui/core/ButtonBase";
@@ -67,7 +66,11 @@ const useStyles = makeStyles((theme:Theme) =>
   })
 );
 
-function ElevationScroll(props:any) {
+interface ElevationScrollProps {
+  children: React.ReactElement;
+  window: Function;
+};
+function ElevationScroll(props: ElevationScrollProps) {
   const classes = useStyles();
 
   const { children, window } = props;
@@ -86,12 +89,7 @@ function ElevationScroll(props:any) {
   });
 }
 
-ElevationScroll.propTypes = {
-  children: PropTypes.element.isRequired,
-  window: PropTypes.func
-};
-
-export default function NavBar(props:any) {
+export default function NavBar(props: any) {
   const scrollToTop = () => {
     window.scrollTo({
         top: 0,
