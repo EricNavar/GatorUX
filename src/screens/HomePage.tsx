@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, lazy, Suspense } from "react";
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import AboutUs from "../Components/AboutUs Section/AboutUs";
+import CircularProgress from '@material-ui/core/CircularProgress';
 import HomeBanner from "../Components/HomeBanner";
-import OfficersBanner from "../Components/OfficersBanner Section/OfficersBanner";
-import ContactBanner from "../Components/Contact/ContactBanner";
+const AboutUs = lazy(() => import("../Components/AboutUs Section/AboutUs"));
+const OfficersBanner = lazy(() => import("../Components/OfficersBanner Section/OfficersBanner"));
+const ContactBanner = lazy(() => import("../Components/Contact/ContactBanner"));
 
 const useStyles = makeStyles((theme: Theme) => 
   createStyles({
@@ -25,13 +26,17 @@ export default function HomePage() {
     });
   }, []);
 
+  const renderLoader = () => <CircularProgress/>;
+
   const classes = useStyles();
   return (
     <main className={classes.homePage}>
       <HomeBanner />
-      <AboutUs />
-      <OfficersBanner />
-      <ContactBanner />
+      <Suspense fallback={renderLoader()}>
+        <AboutUs />
+        <OfficersBanner />
+        <ContactBanner />
+      </Suspense>
     </main>
   );
 }

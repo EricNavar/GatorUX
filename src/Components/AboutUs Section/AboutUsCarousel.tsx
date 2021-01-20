@@ -1,8 +1,8 @@
 import React from 'react';
 import Carousel from 'react-material-ui-carousel';
 import { makeStyles } from "@material-ui/core/styles";
-import Slide1 from './../../assets/Slide1.jpg';
-import Slide2 from './../../assets/Slide2.jpg';
+import Slide1 from './../../assets/Slide1.webp';
+import Slide2 from './../../assets/Slide2.webp';
 
 const useStyles = makeStyles((theme) => ({
   carouselContainer: {
@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function AboutUsCarousel() {
-  var items = [
+  const items = [
     {
       photo: Slide1
     },
@@ -69,7 +69,7 @@ export default function AboutUsCarousel() {
         {items.map((item, i) => <Item key={i} photo={item.photo} />)}
       </Carousel>
     </div>
-  )
+  );
 }
 
 interface Props {
@@ -83,5 +83,5 @@ function Item(props: Props) {
         <img alt="" src={props.photo} className={classes.photo} />
       </div>
     </div>
-  )
+  );
 }

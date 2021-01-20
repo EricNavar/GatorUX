@@ -61,13 +61,13 @@ const useStyles = makeStyles({
   }
 });
 
-function ScrollDownIcon() {
+export default function ScrollDownIcon() {
   const [scrolled,setScrolled] = React.useState(false);
   React.useEffect(() => {
     function onScroll() {
       setScrolled(true);
     };
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, {passive:true});
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -85,5 +85,3 @@ function ScrollDownIcon() {
     </Hidden>
   );
 }
-
-export default ScrollDownIcon;

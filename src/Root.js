@@ -1,9 +1,10 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import HomePage from "./screens/HomePage";
 import Header from "./Components/Header";
-import Footer from "./Components/Footer";
+const Footer = lazy(() => import("./Components/Footer"));
 
 //https://reacttraining.com/react-router/web/guides/quick-start
 
@@ -44,6 +45,8 @@ export default function Root() {
     }
   });
 
+  const renderLoader = () => <CircularProgress/>;
+
   return (
     <BrowserRouter>
       <ThemeProvider theme={myTheme}>
@@ -52,7 +55,9 @@ export default function Root() {
           <Route exact path="/" component={HomePage} />
           <Redirect to="/" />
         </Switch>
-        <Footer />
+        <Suspense fallback={renderLoader}>
+          <Footer />
+        </Suspense>
       </ThemeProvider>
     </BrowserRouter>
   );

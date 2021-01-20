@@ -36,7 +36,7 @@ const useStyles = makeStyles({
   }
 });
 
-function ContactBanner() {
+export default function ContactBanner() {
   const copyEmail = () => {
     // copies the email prop into the user's clipboard
     copy("email@ufl.edu");
@@ -62,7 +62,7 @@ function ContactBanner() {
       >
         <div className={classes.emailContainer}>
           <Tooltip disableFocusListener title="Copy">
-            <IconButton onClick={copyEmail}>
+            <IconButton aria-label="copy email" onClick={copyEmail}>
               <CopyIcon/>
             </IconButton>
           </Tooltip>
@@ -74,5 +74,3 @@ function ContactBanner() {
     </section>
   );
 }
-
-export default ContactBanner;

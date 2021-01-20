@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme:Theme) =>
       height: "10rem",
       borderRadius: "50% !important",
       overflow: "hidden",
-      boxShadow: "0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+      boxShadow: "0 5px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
       [theme.breakpoints.down('xs')]: {
         width: "6rem",
         height: "6rem",
@@ -46,7 +46,7 @@ interface Props {
   officerPosition:string;
   imgSrc:string;
 }
-function OfficerCard(props: Props) {
+export default function OfficerCard(props: Props) {
   const {officerName, officerPosition, imgSrc} = props;
   const classes = useStyles();
   return (
@@ -59,5 +59,3 @@ function OfficerCard(props: Props) {
     </Grid>
   );
 }
-
-export default OfficerCard;

@@ -5,7 +5,7 @@ import ButtonBase from "@material-ui/core/ButtonBase";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 //local files
-import GatorUXLogo from "../assets/GatorUXLogo.png";
+import GatorUXLogo from "../assets/GatorUXLogo.webp";
 import Typography from '@material-ui/core/Typography';
 
 //citation: https://material-ui.com/components/app-bar/#hide-app-bar
@@ -103,10 +103,14 @@ export default function NavBar(props: any) {
       <ElevationScroll {...props}>
         <AppBar id="AppBar" className={classes.navbar} position="fixed">
           <Toolbar className={classes.toolbar}>
-            <ButtonBase onClick={scrollToTop} className={classes.buttonBase}>
+            <ButtonBase
+              aria-label="scroll to top"
+              onClick={scrollToTop}
+              className={classes.buttonBase}
+            >
               <img
                 src={GatorUXLogo}
-                alt=""
+                alt="Gator UX Logo"
                 className={classes.HeaderLogo}
               />
             </ButtonBase>

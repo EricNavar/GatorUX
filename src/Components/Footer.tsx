@@ -58,7 +58,7 @@ const useStyles = makeStyles({
   }
 });
 
-function Footer() {
+export default function Footer() {
   const classes = useStyles();
   return (
     <footer className={classes.FooterContainer}>
@@ -70,6 +70,7 @@ function Footer() {
               href={elem.href}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={`${elem.name} link`}
             >
               <img
                 src={elem.logo}
@@ -86,5 +87,3 @@ function Footer() {
     </footer>
   );
 }
-
-export default Footer;

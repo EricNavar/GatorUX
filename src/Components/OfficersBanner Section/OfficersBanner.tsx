@@ -25,7 +25,7 @@ const useStyles = makeStyles({
   }
 });
 
-function OfficersBanner() {
+export default function OfficersBanner() {
   const classes = useStyles();
   //for later: use hooks to update number of rows depending on screen size
 
@@ -49,5 +49,3 @@ function OfficersBanner() {
     </section>
   );
 }
-
-export default OfficersBanner;

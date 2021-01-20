@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-function AboutUs() {
+export default function AboutUs() {
   const classes = useStyles();
   return (
     <Grid
@@ -72,5 +72,3 @@ function AboutUs() {
     </Grid>
   );
 }
-
-export default AboutUs;
