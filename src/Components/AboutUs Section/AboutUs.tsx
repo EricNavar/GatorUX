@@ -1,46 +1,48 @@
 import React from "react";
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import { makeStyles } from "@material-ui/core/styles";
-import AboutUsCarousel from './AboutUsCarousel.js';
+import AboutUsCarousel from './AboutUsCarousel';
+import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 
-const useStyles = makeStyles((theme) => ({
-  aboutUsArticle: {
-    width: "100%",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "space-evenly",
-    textAlign: 'left'
-  },
-  aboutUsDescription: {
-    maxWidth: '100vw',
-    width: 500,
-    textAlign: "center",
-    paddingLeft: 12,
-    paddingRight: 12,
-    marginBottom: 20,
-    fontSize: 20,
-    [theme.breakpoints.down('xs')]: {
-      maxWidth: 'calc(100vw - 24px)'
+const useStyles = makeStyles((theme: Theme) => 
+  createStyles({
+    aboutUsArticle: {
+      width: "100%",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "space-evenly",
+      textAlign: 'left'
+    },
+    aboutUsDescription: {
+      maxWidth: '100vw',
+      width: 500,
+      textAlign: "center",
+      paddingLeft: 12,
+      paddingRight: 12,
+      marginBottom: 20,
+      fontSize: 20,
+      [theme.breakpoints.down('xs')]: {
+        maxWidth: 'calc(100vw - 24px)'
+      }
+    },
+    divider: {
+      backgroundColor: '#5967b0',
+      width: 80,
+      height: 5,
+      marginBottom: 10
+    },
+    titleContainer: {
+      textAlign: 'center',
+      marginTop: 16
+    },
+    dividerContainer: {
+      marginBottom: 16,
+      justifyContent: 'center',
+      display: 'grid'
     }
-  },
-  divider: {
-    backgroundColor: '#5967b0',
-    width: 80,
-    height: 5,
-    marginBottom: 10
-  },
-  titleContainer: {
-    textAlign: 'center',
-    marginTop: 16
-  },
-  dividerContainer: {
-    marginBottom: 16,
-    justifyContent: 'center',
-    display: 'grid'
-  }
-}));
+  })
+);
 
 function AboutUs() {
   const classes = useStyles();

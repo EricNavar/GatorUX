@@ -1,8 +1,8 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import SplashImage from './../assets/SplashScreen.jpg';
-import ScrollDownIcon from "./ScrollDownIcon.js";
+import ScrollDownIcon from "./ScrollDownIcon";
 
 const useStyles = makeStyles({
   homeBannerContainer: {

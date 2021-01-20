@@ -64,7 +64,7 @@ const useStyles = makeStyles({
 function ScrollDownIcon() {
   const [scrolled,setScrolled] = React.useState(false);
   React.useEffect(() => {
-    const onScroll = e => {
+    function onScroll() {
       setScrolled(true);
     };
     window.addEventListener("scroll", onScroll);

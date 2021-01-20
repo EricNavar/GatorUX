@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import HomePage from "./screens/HomePage.js";
-import Header from "./Components/Header.js";
-import Footer from "./Components/Footer.js";
+import HomePage from "./screens/HomePage";
+import Header from "./Components/Header";
+import Footer from "./Components/Footer";
 
 //https://reacttraining.com/react-router/web/guides/quick-start
 

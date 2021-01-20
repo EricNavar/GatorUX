@@ -4,68 +4,70 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import ButtonBase from "@material-ui/core/ButtonBase";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
-import { makeStyles } from "@material-ui/core";
+import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 //local files
 import GatorUXLogo from "../assets/GatorUXLogo.png";
 import Typography from '@material-ui/core/Typography';
 
 //citation: https://material-ui.com/components/app-bar/#hide-app-bar
 
-const useStyles = makeStyles(theme => ({
-  navbar: {
-    '& .MuiButton-root:hover': {
-      backgroundColor: 'rgba(0, 0, 0, 0.1)'
+const useStyles = makeStyles((theme:Theme) => 
+  createStyles({
+    navbar: {
+      '& .MuiButton-root:hover': {
+        backgroundColor: 'rgba(0, 0, 0, 0.1)'
+      },
+      [theme.breakpoints.down('sm')]: {
+        paddingLeft: 12,
+        paddingRight: 12
+      },
+      [theme.breakpoints.down('xs')]: {
+        borderRadius: 8,
+        margin: 8,
+        width: "calc(100% - 16px)",
+      }
     },
-    [theme.breakpoints.down('sm')]: {
-      paddingLeft: 12,
-      paddingRight: 12
+    scrolled: {
+      boxShadow: "0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+      [theme.breakpoints.down('xs')]: {
+        backgroundColor: "#000",
+      },
+      [theme.breakpoints.up('sm')]: {
+        backgroundColor: "#fff",
+        color: "#000"
+      },
     },
-    [theme.breakpoints.down('xs')]: {
-      borderRadius: 8,
-      margin: 8,
-      width: "calc(100% - 16px)",
+    //when the navbar is at the top of the screen and is white
+    top: {
+      background: "rgba(0,0,0,0)",
+      color: "#000000"
+    },
+    HeaderLogo: {
+      width: 'calc(var(--header-height) - 20px)',
+      height: 'auto',
+      margin: '0px 10px',
+    },
+    HeaderTitle: {
+      fontSize: '1.3rem !important',
+      fontWeight: 600
+    },
+    buttonBase: {
+      width: 'calc(var(--header-height) - 10px)',
+      height: 'calc(var(--header-height) - 10px)',
+      borderRadius: '50%',
+      marginLeft: 12,
+      marginRight: 12,
+      backgroundColor: "#000"
+    },
+    toolbar: {
+      [theme.breakpoints.down('xs')]: {
+        justifyContent: "center"
+      }
     }
-  },
-  scrolled: {
-    boxShadow: "0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
-    [theme.breakpoints.down('xs')]: {
-      backgroundColor: "#000",
-    },
-    [theme.breakpoints.up('sm')]: {
-      backgroundColor: "#fff",
-      color: "#000"
-    },
-  },
-  //when the navbar is at the top of the screen and is white
-  top: {
-    background: "rgba(0,0,0,0)",
-    color: "#000000"
-  },
-  HeaderLogo: {
-    width: 'calc(var(--header-height) - 20px)',
-    height: 'auto',
-    margin: '0px 10px',
-  },
-  HeaderTitle: {
-    fontSize: '1.3rem !important',
-    fontWeight: '600 !important'
-  },
-  buttonBase: {
-    width: 'calc(var(--header-height) - 10px)',
-    height: 'calc(var(--header-height) - 10px)',
-    borderRadius: '50%',
-    marginLeft: 12,
-    marginRight: 12,
-    backgroundColor: "#000"
-  },
-  toolbar: {
-    [theme.breakpoints.down('xs')]: {
-      justifyContent: "center"
-    }
-  }
-}));
+  })
+);
 
-function ElevationScroll(props) {
+function ElevationScroll(props:any) {
   const classes = useStyles();
 
   const { children, window } = props;
@@ -89,7 +91,7 @@ ElevationScroll.propTypes = {
   window: PropTypes.func
 };
 
-export default function NavBar(props) {
+export default function NavBar(props:any) {
   const scrollToTop = () => {
     window.scrollTo({
         top: 0,
@@ -101,8 +103,8 @@ export default function NavBar(props) {
   return (
     <React.Fragment>
       <ElevationScroll {...props}>
-        <AppBar id="AppBar" className={classes.navbar}>
-          <Toolbar className={classes.toolbar} position='fixed'>
+        <AppBar id="AppBar" className={classes.navbar} position="fixed">
+          <Toolbar className={classes.toolbar}>
             <ButtonBase onClick={scrollToTop} className={classes.buttonBase}>
               <img
                 src={GatorUXLogo}

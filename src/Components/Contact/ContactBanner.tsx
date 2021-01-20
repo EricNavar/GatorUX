@@ -8,13 +8,13 @@ import Typography from '@material-ui/core/Typography';
 import copy from "clipboard-copy";
 
 const useStyles = makeStyles({
-  contactBanner: {
+  contactBannerContainer: {
     width:"100%",
     textAlign: 'center',
     marginBottom: 20,
     maxWidth: "100vw"
   },
-  ContactBannerContainer: {
+  contactBanner: {
     width: "100%",
     display: "flex",
     flexDirection: "row",
@@ -37,28 +37,28 @@ const useStyles = makeStyles({
 });
 
 function ContactBanner() {
-  const copyEmail = (e) => {
+  const copyEmail = (e:any) => {
     // copies the email prop into the user's clipboard
     copy("email@ufl.edu");
 
     // makes sure the ::after pseudo element's text is 'Copied!' while the user still hovers over it
-    e.target.classList.add(classes.clickHover);
+    // e.target.classList.add(classes.clickHover);
   };
   
   const classes = useStyles();
   return (
-    <section className={classes.contactBanner}>
+    <section className={classes.contactBannerContainer}>
       <Typography color="textPrimary" component='h2' variant='h2'>Contact</Typography>
-      <center>
+      <div style={{display: "flex", justifyContent: "center"}}>
         <div className={classes.divider}></div>
-      </center>
+      </div>
       <Grid
         id='contact-card-grid-container'
         container
         direction="row"
         justify="center"
         alignItems="center"
-        className={classes.ContactBannerContainer}
+        className={classes.contactBanner}
       >
         <div className={classes.emailContainer}>
           <Tooltip disableFocusListener title="Copy">

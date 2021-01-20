@@ -66,18 +66,21 @@ export default function AboutUsCarousel() {
         timeout={300}
         interval={5000}
       >
-        {items.map((item, i) => <Item key={i} item={item} />)}
+        {items.map((item, i) => <Item key={i} photo={item.photo} />)}
       </Carousel>
     </div>
   )
 }
 
-function Item(props) {
+interface Props {
+  photo: string;
+}
+function Item(props: Props) {
   const classes = useStyles();
   return (
     <div className={classes.aspectRatioBoxOuter}>
       <div className={classes.aspectRatioBoxInner}>
-        <img alt="" src={props.item.photo} className={classes.photo} />
+        <img alt="" src={props.photo} className={classes.photo} />
       </div>
     </div>
   )

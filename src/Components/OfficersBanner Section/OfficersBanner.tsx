@@ -1,29 +1,31 @@
 import React from "react";
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import OfficerCard from "./OfficerCard";
 import officersData from "./officers.js";
 
-const useStyles = makeStyles((theme) => ({
-  officerBannerRoot: {
-    width: "100%",
-    marginBottom: 15,
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    maxWidth: 1000
-  },
-  divider: {
-    backgroundColor: '#5967b0',
-    width: 80,
-    height: 5,
-    marginBottom: 10
-  },
-  officerCardContainer: {
-    justifyContent: "center"
-  }
-}));
+const useStyles = makeStyles((theme:Theme) => 
+    createStyles({
+    officerBannerRoot: {
+      width: "100%",
+      marginBottom: 15,
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      maxWidth: 1000
+    },
+    divider: {
+      backgroundColor: '#5967b0',
+      width: 80,
+      height: 5,
+      marginBottom: 10
+    },
+    officerCardContainer: {
+      justifyContent: "center"
+    }
+  })
+);
 
 function OfficersBanner() {
   const classes = useStyles();
