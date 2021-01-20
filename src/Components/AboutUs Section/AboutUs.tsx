@@ -56,7 +56,7 @@ function AboutUs() {
       spacing={0}
     >
       <Grid item xs={12} className={classes.titleContainer}>
-        <Typography color="textPrimary" component='h2' variant='h2' gutterBottom>What We Do</Typography>
+        <Typography color="textPrimary" component='h2' variant='h2'>What We Do</Typography>
       </Grid>
       <Grid item xs={12} className={classes.dividerContainer}>
         <div className={classes.divider}></div>
