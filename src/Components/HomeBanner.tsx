@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import SplashImage from './../assets/SplashScreen.webp';
+import SplashImage from './../assets/SplashScreen.jpg';
 import ScrollDownIcon from "./ScrollDownIcon";
 
 const useStyles = makeStyles({

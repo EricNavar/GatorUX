@@ -5,7 +5,7 @@ import ButtonBase from "@material-ui/core/ButtonBase";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 //local files
-import GatorUXLogo from "../assets/GatorUXLogo.webp";
+import GatorUXLogo from "../assets/GatorUXLogo.svg";
 import Typography from '@material-ui/core/Typography';
 
 //citation: https://material-ui.com/components/app-bar/#hide-app-bar
@@ -53,10 +53,8 @@ const useStyles = makeStyles((theme:Theme) =>
     buttonBase: {
       width: 'calc(var(--header-height) - 10px)',
       height: 'calc(var(--header-height) - 10px)',
-      borderRadius: '50%',
       marginLeft: 12,
       marginRight: 12,
-      backgroundColor: "#000"
     },
     toolbar: {
       [theme.breakpoints.down('xs')]: {

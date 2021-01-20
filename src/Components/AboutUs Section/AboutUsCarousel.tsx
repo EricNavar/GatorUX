@@ -1,8 +1,8 @@
 import React from 'react';
 import Carousel from 'react-material-ui-carousel';
 import { makeStyles } from "@material-ui/core/styles";
-import Slide1 from './../../assets/Slide1.webp';
-import Slide2 from './../../assets/Slide2.webp';
+import Slide1 from './../../assets/Slide1.jpg';
+import Slide2 from './../../assets/Slide2.jpg';
 
 const useStyles = makeStyles((theme) => ({
   carouselContainer: {
