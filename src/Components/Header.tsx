@@ -12,6 +12,9 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme:Theme) => 
   createStyles({
+    "*": {
+      "--header-height": 60
+    },
     navbar: {
       '& .MuiButton-root:hover': {
         backgroundColor: 'rgba(0, 0, 0, 0.1)'
