@@ -26,15 +26,17 @@ export default function HomePage() {
     });
   }, []);
 
-  const renderLoader = () => <CircularProgress/>;
-
   const classes = useStyles();
   return (
     <main className={classes.homePage}>
       <HomeBanner />
-      <Suspense fallback={renderLoader()}>
+      <Suspense fallback={<CircularProgress/>}>
         <AboutUs />
+      </Suspense>
+      <Suspense fallback={<CircularProgress/>}>
         <OfficersBanner />
+      </Suspense>
+      <Suspense fallback={<CircularProgress/>}>
         <ContactBanner />
       </Suspense>
     </main>
