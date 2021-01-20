@@ -57,7 +57,7 @@ export default function OfficerCard(props: Props) {
         </Suspense>
       </div>
       <Typography color="textPrimary" component='h3' variant='h5' className={classes.officerName}>{officerName}</Typography>
-      <Typography color="textSecondary" component='h5' variant='overline' className={classes.officerPosition}>{officerPosition}</Typography>
+      <Typography color="textSecondary" variant='overline' className={classes.officerPosition}>{officerPosition}</Typography>
     </Grid>
   );
 }
