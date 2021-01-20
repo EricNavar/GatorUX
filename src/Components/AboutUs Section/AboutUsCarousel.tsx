@@ -4,7 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Slide1 from './../../assets/Slide1.jpg';
 import Slide2 from './../../assets/Slide2.jpg';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles({
   carouselContainer: {
     textAlign: 'center',
     maxWidth: "100vw",
@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
     width: "inherit",
     borderRadius: 6
   }
-}));
+});
 
 export default function AboutUsCarousel() {
   const items = [
