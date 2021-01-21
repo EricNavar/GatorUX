@@ -40,6 +40,11 @@ const useStyles = makeStyles((theme: Theme) =>
       marginBottom: 16,
       justifyContent: 'center',
       display: 'grid'
+    },
+    carouselWrapper: {
+      textAlign: 'center',
+      display: 'contents',
+      minHeight: 280
     }
   })
 );
@@ -66,7 +71,7 @@ export default function AboutUs() {
           Gator UX is established for the purpose of promoting and teaching the user experience research and design process to anyone who is interested in the field, as well as to help aspiring designers develop professionally.
         </Typography>
       </Grid>
-      <Grid item xs={12} sm={6} style={{textAlign: 'center', display: 'contents'}}>
+      <Grid item xs={12} className={classes.carouselWrapper} sm={6}>
         <Suspense fallback={<div/>}>
           <AboutUsCarousel/>
         </Suspense>
