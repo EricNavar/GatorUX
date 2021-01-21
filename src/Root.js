@@ -58,7 +58,9 @@ export default function Root() {
         <Header />
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route path="/static/" component={<div/>}/>
+          <Route path="/static/">
+            <div/>
+          </Route>
           <Redirect to=""/>
         </Switch>
         <Suspense defer fallback={<div/>}>
