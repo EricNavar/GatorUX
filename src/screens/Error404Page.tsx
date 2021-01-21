@@ -6,7 +6,7 @@ import ErrorIcon from './../assets/ErrorBubble.svg';
 
 export default function Error404Page() {
   React.useEffect(() => {
-    document.title = 'Page not found | DC Rock Fitness';
+    document.title = 'Page not found | Gator UX';
   },[]);
   return (
     <main style={{textAlign:'center', marginTop: 32}}>
