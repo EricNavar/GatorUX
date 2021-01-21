@@ -10,7 +10,6 @@ const useStyles = makeStyles({
 
 export default function OfficerCard(props) {
   const classes = useStyles();
-  console.log(props)
   return (
     <img src={props.imgSrc} alt={props.officerName + " picture"} className={classes.officerImg} />
   );
