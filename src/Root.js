@@ -43,6 +43,14 @@ export default function Root() {
       }
     }
   });
+  /*
+  function RouterHelper(props) {
+    const path = props.location.pathname;
+    if (!path.indexOf("/static/") == 0){
+      return <Redirect to="/"/>
+    }
+  }
+  */
 
   return (
     <BrowserRouter>
@@ -50,7 +58,8 @@ export default function Root() {
         <Header />
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Redirect to="/" />
+          <Route path="/static/" component={<div/>}/>
+          <Redirect to=""/>
         </Switch>
         <Suspense defer fallback={<div/>}>
           <Footer defer/>
