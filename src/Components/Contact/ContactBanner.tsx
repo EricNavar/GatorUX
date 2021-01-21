@@ -2,7 +2,7 @@ import React from "react";
 import Grid from '@material-ui/core/Grid';
 import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
-import CopyIcon from '@material-ui/icons/FileCopy';
+import CopyIcon from './../../assets/FileCopy';
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from '@material-ui/core/Typography';
 import copy from "clipboard-copy";
