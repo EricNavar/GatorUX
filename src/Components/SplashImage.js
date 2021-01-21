@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
-import SplashImage from './../assets/SplashScreen.jpg';
+import SplashImage from './../assets/SplashScreen.webp';
 
 const useStyles = makeStyles({
   splashImage: {
