@@ -65,7 +65,6 @@ export default function ScrollDownIcon() {
   const [scrolled,setScrolled] = React.useState(false);
   React.useEffect(() => {
     function onScroll(event:any) {
-      event.preventDefault();
       setScrolled(true);
     };
     document.addEventListener("scroll", onScroll, {passive:true});
