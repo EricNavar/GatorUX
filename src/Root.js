@@ -1,9 +1,8 @@
-import React, { lazy, Suspense } from "react";
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import React from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import HomePage from "./screens/HomePage";
-import Header from "./Components/Header";
-const Footer = lazy(() => import("./Components/Footer"));
+import Error404Page from "./screens/Error404Page";
 
 //https://reacttraining.com/react-router/web/guides/quick-start
 
@@ -55,17 +54,10 @@ export default function Root() {
   return (
     <BrowserRouter>
       <ThemeProvider theme={myTheme}>
-        <Header />
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route path="/static/">
-            <div/>
-          </Route>
-          <Redirect to=""/>
+          <Route component={Error404Page} />
         </Switch>
-        <Suspense defer fallback={<div/>}>
-          <Footer defer/>
-        </Suspense>
       </ThemeProvider>
     </BrowserRouter>
   );
