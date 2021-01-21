@@ -1,7 +1,8 @@
-import React, {Suspense} from "react";
+import React, {Suspense, lazy} from "react";
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+const Avatar = lazy(() => import("./Avatar"));
 
 const useStyles = makeStyles((theme:Theme) => 
   createStyles({
@@ -53,7 +54,7 @@ export default function OfficerCard(props: Props) {
     <Grid item xs={6} sm={4} className={classes.officerCard}>
       <div className={classes.officerImgContainer}>
         <Suspense fallback={<div/>}>
-          <img src={imgSrc} alt={officerName + " picture"} className={classes.officerImg} />
+          <Avatar imgSrc={imgSrc} officerName={officerName}/>
         </Suspense>
       </div>
       <Typography color="textPrimary" component='h3' variant='h5' className={classes.officerName}>{officerName}</Typography>
