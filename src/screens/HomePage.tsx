@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import HomeBanner from "../Components/HomeBanner";
-import NoSsr from '@material-ui/core/NoSsr';
 import Header from "./../Components/Header";
 import AboutUs from "../Components/AboutUs Section/AboutUs";
 import OfficersBanner from "../Components/OfficersBanner Section/OfficersBanner";
@@ -33,12 +32,10 @@ export default function HomePage() {
     <main className={classes.homePage}>
       <Header/>
       <HomeBanner />
-      <NoSsr defer>
-        <AboutUs />
-        <OfficersBanner />
-        <ContactBanner />
-        <Footer/>
-      </NoSsr>
+      <AboutUs />
+      <OfficersBanner />
+      <ContactBanner />
+      <Footer/>
     </main>
   );
 }
