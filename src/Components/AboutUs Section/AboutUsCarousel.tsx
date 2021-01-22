@@ -22,9 +22,10 @@ const tutorialSteps = [
 ];
 
 const useStyles = makeStyles({
-  root: {
+  carouselContainer: {
     flexGrow: 1,
-    maxWidth: 450
+    maxWidth: 450,
+    position: "relative"
   },
   img: {
     display: 'block',
@@ -61,7 +62,6 @@ function SwipeableTextMobileStepper() {
   const classes = useStyles();
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
-  const maxSteps = tutorialSteps.length;
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -76,34 +76,38 @@ function SwipeableTextMobileStepper() {
   };
 
   return (
-    <div className={classes.root}>
+    <div className={classes.carouselContainer}>
       <AutoPlaySwipeableViews
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
         index={activeStep}
         onChangeIndex={handleStepChange}
         enableMouseEvents
-        maxSteps={maxSteps}
       >
-        <div className={classes.aspectRatioBoxOuter}>
-          <div className={classes.aspectRatioBoxInner}>
-            {tutorialSteps.map((step, index) => (
-              <div key={step.label}>
-                {Math.abs(activeStep - index) <= 2 ? (
-                  <img className={classes.img} src={step.img} alt={step.label} />
-                  ) : null}
-              </div>
-            ))}
-            <IconButton className={classes.button} onClick={handleBack} style={{left:0}}>
-              <LeftArrowIcon/>
-            </IconButton>
-            <IconButton className={classes.button} onClick={handleNext} style={{right:0}}>
-              <RightArrowIcon/>
-            </IconButton>
+        {tutorialSteps.map((step, index) => (
+          <div key={step.label}>
+            {Math.abs(activeStep - index) <= 2 ? (
+              <img className={classes.img} src={step.img} alt={step.label} />
+              ) : null}
           </div>
-        </div>
+        ))}
       </AutoPlaySwipeableViews>
+      <IconButton aria-label="previous slide" className={classes.button} onClick={handleBack} style={{left:0}}>
+        <LeftArrowIcon/>
+      </IconButton>
+      <IconButton aria-label="next slide" className={classes.button} onClick={handleNext} style={{right:0}}>
+        <RightArrowIcon/>
+      </IconButton>
     </div>
   );
 }
 
 export default SwipeableTextMobileStepper;
+
+/*
+          <IconButton aria-label="previous slide" className={classes.button} onClick={handleBack} style={{left:0}}>
+            <LeftArrowIcon/>
+          </IconButton>
+          <IconButton aria-label="next slide" className={classes.button} onClick={handleNext} style={{right:0}}>
+            <RightArrowIcon/>
+          </IconButton>
+          */
