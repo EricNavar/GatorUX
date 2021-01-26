@@ -13,23 +13,24 @@ const useStyles = makeStyles((theme: Theme) =>
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "space-evenly",
-      textAlign: 'left'
+      textAlign: 'left',
+      padding: 8
     },
     aboutUsDescription: {
       maxWidth: '100%',
       width: 500,
       fontWeight: 600,
       fontSize: 20,      
-      [theme.breakpoints.down('xs')]: {
-        maxWidth: 'calc(100vw - 24px)'
-      }
     },
     aboutUsDescriptionCard: {
       color: "white",
       background: "#5967b0",
       padding: 16,
       maxWidth: 400,
-      fontWeight: 600
+      fontWeight: 600,
+      [theme.breakpoints.down('xs')]: {
+        maxWidth: 'calc(100vw - 48px)'
+      }
     },
     divider: {
       backgroundColor: '#5264f8',
