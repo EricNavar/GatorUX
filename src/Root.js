@@ -37,20 +37,12 @@ export default function Root() {
       },
       h2: {
         fontSize: "2.5rem",
-        marginBottom: ".35em",
+        marginBottom: ".25em",
         marginTop: 0,
         fontWeight: 600
       }
     }
   });
-  /*
-  function RouterHelper(props) {
-    const path = props.location.pathname;
-    if (!path.indexOf("/static/") == 0){
-      return <Redirect to="/"/>
-    }
-  }
-  */
 
   return (
     <BrowserRouter>
