@@ -22,7 +22,7 @@ const useStyles = makeStyles({
   darkBackgroundWrapper: {
     background: "linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.50) 12%, rgba(0,0,0,0.50) 88%, rgba(0,0,0,0) 100%)",
     maxWidth: "100vw",
-    marginBottom: "1rem",
+    marginBottom: "3rem",
     zIndex: 1,
     paddingLeft: 12,
     paddingRight: 12
@@ -38,6 +38,10 @@ const useStyles = makeStyles({
     fontSize: 24,
     fontWeight: 400,
     zIndex: 2
+  },
+  bannerTitle: {
+    lineHeight: 1.1,
+    textAlign:"center"
   }
 });
 
@@ -50,7 +54,7 @@ export default function HomeBanner() {
       </Suspense>
       <div className={classes.homeBanner}>
         <div className={classes.darkBackgroundWrapper}>
-          <Typography variant='h1' component='h1' style={{lineHeight: 1.1}}>
+          <Typography variant='h1' component='h1' className={classes.bannerTitle}>
             All Things User Experience
           </Typography>
         </div>
