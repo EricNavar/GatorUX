@@ -27,7 +27,7 @@ const social_links = [
   {
     name: "Zoom Room",
     logo: Zoom,
-    href: "ufl.zoom.us/j/99137120169",
+    href: "https://ufl.zoom.us/j/96513674593?fbclid=IwAR3pVwMPRuTgdyPQOk5qf1eIifYhiyxhKhBJaaGIB4E69G00-zmSo4jsKKs",
   },
 ];
 
