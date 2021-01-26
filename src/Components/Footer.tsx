@@ -38,7 +38,7 @@ const useStyles = makeStyles({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#4d5dee",
+    backgroundColor: "#5967b0",
     position: 'relative'
   },
   FooterSocialContainer: {
