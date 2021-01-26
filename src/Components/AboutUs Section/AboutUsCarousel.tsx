@@ -102,12 +102,3 @@ function SwipeableTextMobileStepper() {
 }
 
 export default SwipeableTextMobileStepper;
-
-/*
-          <IconButton aria-label="previous slide" className={classes.button} onClick={handleBack} style={{left:0}}>
-            <LeftArrowIcon/>
-          </IconButton>
-          <IconButton aria-label="next slide" className={classes.button} onClick={handleNext} style={{right:0}}>
-            <RightArrowIcon/>
-          </IconButton>
-          */
