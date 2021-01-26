@@ -12,7 +12,8 @@ const useStyles = makeStyles({
     backgroundSize: "cover",
     backgroundPosition: "center",
     zIndex: 0,
-    position: "absolute"
+    position: "absolute",
+    opacity: .4,
   }
 });
 
