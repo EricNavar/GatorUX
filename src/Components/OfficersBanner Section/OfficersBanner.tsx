@@ -15,7 +15,7 @@ const useStyles = makeStyles({
     maxWidth: 1000
   },
   divider: {
-    backgroundColor: '#5967b0',
+    backgroundColor: '#5264f8',
     width: 80,
     height: 5,
     marginBottom: 10
