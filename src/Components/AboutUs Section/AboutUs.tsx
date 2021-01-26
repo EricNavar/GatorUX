@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     titleContainer: {
       textAlign: 'center',
-      marginTop: 16
+      marginTop: 8
     },
     dividerContainer: {
       marginBottom: 16,
@@ -64,7 +64,6 @@ export default function AboutUs() {
       alignItems="stretch"
       component='section'
       spacing={0}
-      style={{marginTop: 20}}
     >
       <Grid item xs={12} className={classes.titleContainer}>
         <Typography color="textPrimary" component='h2' variant='h2'>What We Do</Typography>
