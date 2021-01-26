@@ -4,7 +4,6 @@ import HomeBanner from "../Components/HomeBanner";
 import Header from "./../Components/Header";
 import AboutUs from "../Components/AboutUs Section/AboutUs";
 import OfficersBanner from "../Components/OfficersBanner Section/OfficersBanner";
-import ContactBanner from "../Components/Contact/ContactBanner";
 import Footer from "../Components/Footer";
 
 const useStyles = makeStyles((theme: Theme) => 
@@ -34,7 +33,6 @@ export default function HomePage() {
       <HomeBanner />
       <AboutUs />
       <OfficersBanner />
-      <ContactBanner />
       <Footer/>
     </main>
   );

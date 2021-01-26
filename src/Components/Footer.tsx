@@ -3,10 +3,14 @@ import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import {makeStyles} from "@material-ui/core/styles";
+import IconButton from '@material-ui/core/IconButton';
+import Tooltip from '@material-ui/core/Tooltip';
+import CopyIcon from './../assets/FileCopy';
 import Discord from "../assets/Discord.svg";
 import Facebook from "../assets/Facebook.svg";
 import Instagram from "../assets/Instagram.svg";
 import Zoom from "../assets/Zoom.svg";
+import copy from "clipboard-copy";
 
 const social_links = [
   {
@@ -55,14 +59,34 @@ const useStyles = makeStyles({
     margin: 0,
     color: "white",
     width: "max-content"
+  },
+  emailContainer: {
+    display: "flex",
+    alignItems: "center",
+    color:'white',
+    borderRadius: 24,
+    background: 'rgba(255,255,255,.2)',
+    paddingRight: 12
+  },
+  buttonWrapper: {
+    maxWidth: 450,
+    paddingBottom: 16,
+    paddingTop: 8
   }
 });
 
 export default function Footer() {
+  const copyEmail = () => {
+    // copies the email prop into the user's clipboard
+    copy("email@ufl.edu");
+
+    // makes sure the ::after pseudo element's text is 'Copied!' while the user still hovers over it
+    // e.target.classList.add(classes.clickHover);
+  };
   const classes = useStyles();
   return (
     <footer className={classes.FooterContainer}>
-      <Grid container style={{maxWidth:450}}>
+      <Grid container justify="center" className={classes.buttonWrapper}>
         {social_links.map((elem, index) => (
           <Grid item  xs={6} sm={3} key={`${elem.name}-${index}-footer-container`}>
             <ButtonBase
@@ -83,6 +107,16 @@ export default function Footer() {
             </ButtonBase>
           </Grid>
         ))}
+        <div className={classes.emailContainer}>
+          <Tooltip disableFocusListener title="Copy">
+            <IconButton aria-label="copy email" onClick={copyEmail}>
+              <CopyIcon/>
+            </IconButton>
+          </Tooltip>
+          <Typography color="textPrimary" component="span" variant="h5">
+            email@ufl.edu
+          </Typography>
+        </div>
       </Grid>
     </footer>
   );
