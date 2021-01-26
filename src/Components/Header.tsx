@@ -31,13 +31,8 @@ const useStyles = makeStyles((theme:Theme) =>
     },
     scrolled: {
       boxShadow: "0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
-      [theme.breakpoints.down('xs')]: {
-        backgroundColor: "#000",
-      },
-      [theme.breakpoints.up('sm')]: {
-        backgroundColor: "#fff",
-        color: "#000"
-      },
+      backgroundColor: "#111",
+      color: "#fff"
     },
     //when the navbar is at the top of the screen and is white
     top: {
