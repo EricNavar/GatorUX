@@ -30,6 +30,10 @@ const useStyles = makeStyles({
     height: 5,
     marginBottom: 10
   },
+  dividerWrapper: {
+    display: "flex",
+    justifyContent: "center"
+  },
   emailContainer: {
     display: "flex",
     alignItems: "center"
@@ -49,7 +53,7 @@ export default function ContactBanner() {
   return (
     <section className={classes.contactBannerContainer}>
       <Typography color="textPrimary" component='h2' variant='h2'>Contact</Typography>
-      <div style={{display: "flex", justifyContent: "center"}}>
+      <div className={classes.dividerWrapper}>
         <div className={classes.divider}></div>
       </div>
       <Grid
