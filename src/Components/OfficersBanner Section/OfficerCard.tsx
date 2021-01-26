@@ -51,7 +51,7 @@ export default function OfficerCard(props: Props) {
   const {officerName, officerPosition, imgSrc} = props;
   const classes = useStyles();
   return (
-    <Grid item xs={6} sm={4} className={classes.officerCard}>
+    <Grid item xs={6} md={3} className={classes.officerCard}>
       <div className={classes.officerImgContainer}>
         <Suspense fallback={<div/>}>
           <Avatar imgSrc={imgSrc} officerName={officerName}/>

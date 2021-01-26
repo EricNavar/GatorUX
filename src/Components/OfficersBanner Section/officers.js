@@ -8,13 +8,18 @@ export default [
     imgSrc: WinonaPic,
   },
   {
-    name: "Johann Vazquez-Rosas",
+    name: "Johann Vazquez",
     position: "Vice President",
     imgSrc: JohannPic,
   },
   {
     name: "Maclay Ramsey",
     position: "Treasurer",
+    imgSrc: WinonaPic,
+  },
+  {
+    name: "Angelica Roque",
+    position: "Secretary",
     imgSrc: WinonaPic,
   }
 ];

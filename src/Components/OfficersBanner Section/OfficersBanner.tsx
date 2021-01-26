@@ -12,7 +12,7 @@ const useStyles = makeStyles({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    maxWidth: 1000
+    maxWidth: 1200
   },
   divider: {
     backgroundColor: '#5264f8',
