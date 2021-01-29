@@ -16,8 +16,8 @@ const tutorialSteps = [
     img: Slide1
   },
   {
-    label: 'Club Banner',
-    img: Slide2
+    label: '2021 Trends Forecast',
+    img: Slide3
   }
 ];
 
