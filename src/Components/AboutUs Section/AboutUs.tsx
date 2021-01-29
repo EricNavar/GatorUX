@@ -7,18 +7,25 @@ const AboutUsCarousel = lazy(() => import('./AboutUsCarousel'));
 
 const useStyles = makeStyles((theme: Theme) => 
   createStyles({
+    aboutUsRoot: {
+      [theme.breakpoints.up('sm')]: {
+        width: "80vw",
+        maxWidth: 1200
+      },
+      [theme.breakpoints.down('xs')]: {
+        width: "95vw"
+      }
+    },
     aboutUsArticle: {
-      width: "100%",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "space-evenly",
       textAlign: 'left',
-      padding: 8
+      margin: 8
     },
     aboutUsDescription: {
-      maxWidth: '100%',
-      width: 500,
+      maxWidth: 500,
       fontWeight: 600,
       fontSize: 20,      
     },
@@ -34,13 +41,14 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     divider: {
       backgroundColor: '#5264f8',
-      width: 80,
       height: 5,
-      marginBottom: 10
+      marginBottom: 10,
+      margin: "auto"
     },
     titleContainer: {
-      textAlign: 'center',
-      marginTop: 8
+      textAlign: 'left',
+      marginTop: 8,
+      width: "90vw"
     },
     dividerContainer: {
       marginBottom: 16,
@@ -48,9 +56,9 @@ const useStyles = makeStyles((theme: Theme) =>
       display: 'grid'
     },
     carouselWrapper: {
-      textAlign: 'center',
-      display: 'contents',
-      minHeight: 280
+      display: "flex",
+      justifyContent: "center",
+      margin: 8
     }
   })
 );
@@ -58,32 +66,33 @@ const useStyles = makeStyles((theme: Theme) =>
 export default function AboutUs() {
   const classes = useStyles();
   return (
-    <Grid
-      container
-      direction="row"
-      justify="center"
-      alignItems="stretch"
-      component='section'
-      spacing={0}
-    >
-      <Grid item xs={12} className={classes.titleContainer}>
-        <Typography color="textPrimary" component='h2' variant='h2'>What We Do</Typography>
+    <section className={classes.aboutUsRoot}>
+      <div style={{marginLeft: 20, marginRight: 20}}>
+        <div style={{width:"max-content"}}>
+          <Typography color="textPrimary" component='h2' variant='h2' style={{width:"max-content"}}>What We Do</Typography>
+          <div className={classes.divider}></div>
+        </div>
+      </div>
+      <Grid
+        container
+        direction="row"
+        justify="space-between"
+        alignItems="stretch"
+        spacing={0}
+      >
+        <Grid item className={classes.aboutUsArticle}>
+          <Paper elevation={3} className={classes.aboutUsDescriptionCard}>
+            <Typography color="textPrimary" component='h3' variant='body1' className={classes.aboutUsDescription}>
+              Gator UX is established for the purpose of promoting and teaching the user experience research and design process to anyone who is interested in the field, as well as to help aspiring designers develop professionally.
+            </Typography>
+          </Paper>
+        </Grid>
+        <Grid item className={classes.carouselWrapper}>
+          <Suspense fallback={<div/>}>
+            <AboutUsCarousel/>
+          </Suspense>
+        </Grid>
       </Grid>
-      <Grid item xs={12} className={classes.dividerContainer}>
-        <div className={classes.divider}></div>
-      </Grid>
-      <Grid item xs={12} sm={6}  className={classes.aboutUsArticle}>
-        <Paper elevation={3} className={classes.aboutUsDescriptionCard}>
-          <Typography color="textPrimary" component='h3' variant='body1' className={classes.aboutUsDescription}>
-            Gator UX is established for the purpose of promoting and teaching the user experience research and design process to anyone who is interested in the field, as well as to help aspiring designers develop professionally.
-          </Typography>
-        </Paper>
-      </Grid>
-      <Grid item xs={12} className={classes.carouselWrapper} sm={6}>
-        <Suspense fallback={<div/>}>
-          <AboutUsCarousel/>
-        </Suspense>
-      </Grid>
-    </Grid>
+    </section>
   );
 }

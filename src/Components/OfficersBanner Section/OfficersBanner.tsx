@@ -1,29 +1,32 @@
 import React from "react";
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import OfficerCard from "./OfficerCard";
 import officersData from "./officers.js";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme: Theme) => createStyles({
   officerBannerRoot: {
-    width: "100%",
     marginBottom: 15,
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
-    maxWidth: 1200
+    [theme.breakpoints.up('sm')]: {
+      width: "80vw",
+      maxWidth: 1200
+    },
+    [theme.breakpoints.down('xs')]: {
+      width: "95vw"
+    }
   },
   divider: {
     backgroundColor: '#5264f8',
-    width: 80,
     height: 5,
     marginBottom: 10
   },
   officerCardContainer: {
     justifyContent: "center"
   }
-});
+}));
 
 export default function OfficersBanner() {
   const classes = useStyles();
@@ -31,8 +34,10 @@ export default function OfficersBanner() {
 
   return (
     <section id="officers-section" className={classes.officerBannerRoot}>
-      <Typography color="textPrimary" component='h2' variant='h2'>Officers</Typography>
-      <div className={classes.divider}></div>
+      <div style={{width:"max-content"}}>
+        <Typography color="textPrimary" component='h2' variant='h2'>Officers</Typography>
+        <div className={classes.divider}></div>
+      </div>
       <Grid container className={classes.officerCardContainer}>
         {[...Array(officersData.length).keys()].map((card_index) => {
           const officerInfo = officersData[card_index];

@@ -4,13 +4,13 @@ import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import IconButton from '@material-ui/core/IconButton'
 import Slide1 from './../../assets/Slide1.webp';
-import Slide2 from './../../assets/Slide2.webp';
+import Slide3 from './../../assets/slide3.jpg';
 import LeftArrowIcon from '../../assets/RightArrow.js';
 import RightArrowIcon from '../../assets/LeftArrow.js';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
-const tutorialSteps = [
+const slides = [
   {
     label: 'iOS Critique poster',
     img: Slide1
@@ -24,8 +24,9 @@ const tutorialSteps = [
 const useStyles = makeStyles({
   carouselContainer: {
     flexGrow: 1,
-    maxWidth: 450,
-    position: "relative"
+    maxWidth: 500,
+    position: "relative",
+    height: "max-content"
   },
   img: {
     display: 'block',
@@ -62,13 +63,14 @@ function SwipeableTextMobileStepper() {
   const classes = useStyles();
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
+  const [slideCount] = React.useState(slides.length);
 
   const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    setActiveStep((prevActiveStep) => (prevActiveStep + 1) % slideCount);
   };
 
   const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    setActiveStep((prevActiveStep) => (prevActiveStep - 1) % slideCount);
   };
 
   const handleStepChange = (step: number) => {
@@ -83,7 +85,7 @@ function SwipeableTextMobileStepper() {
         onChangeIndex={handleStepChange}
         enableMouseEvents
       >
-        {tutorialSteps.map((step, index) => (
+        {slides.map((step, index) => (
           <div key={step.label}>
             {Math.abs(activeStep - index) <= 2 ? (
               <img className={classes.img} src={step.img} alt={step.label} />
