@@ -1,5 +1,7 @@
 import WinonaPic from "../../assets/Winona.jpg";
 import JohannPic from "../../assets/Johann.jpg";
+import MaclayPic from "../../assets/maclay.webp";
+import AngelicaPic from "../../assets/angelica.webp";
 
 export default [
   {
@@ -15,11 +17,11 @@ export default [
   {
     name: "Maclay Ramsey",
     position: "Treasurer",
-    imgSrc: WinonaPic,
+    imgSrc: MaclayPic,
   },
   {
     name: "Angelica Roque",
     position: "Secretary",
-    imgSrc: WinonaPic,
+    imgSrc: AngelicaPic,
   }
 ];
