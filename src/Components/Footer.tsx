@@ -35,15 +35,22 @@ const social_links = [
   },
 ];
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   FooterContainer: {
-    width: "100%",
+    [theme.breakpoints.up('sm')]: {
+      width: "80vw",
+      maxWidth: 1200
+    },
+    [theme.breakpoints.down('xs')]: {
+      width: "95vw"
+    },
+  },
+  FooterContainerInner: {
+    position: 'relative',
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#5967b0",
-    position: 'relative'
   },
   FooterSocialContainer: {
     padding: "8px 30px",
@@ -66,14 +73,21 @@ const useStyles = makeStyles({
     color:'white',
     borderRadius: 24,
     background: 'rgba(255,255,255,.2)',
-    paddingRight: 12
+    paddingRight: 12,
+    marginTop: 12
   },
   buttonWrapper: {
     maxWidth: 450,
     paddingBottom: 16,
     paddingTop: 8
+  },
+  divider: {
+    backgroundColor: '#5264f8',
+    height: 5,
+    marginBottom: 10,
+    margin: "auto"
   }
-});
+}));
 
 export default function Footer() {
   const copyEmail = () => {
@@ -86,38 +100,46 @@ export default function Footer() {
   const classes = useStyles();
   return (
     <footer className={classes.FooterContainer}>
-      <Grid container justify="center" className={classes.buttonWrapper}>
-        {social_links.map((elem, index) => (
-          <Grid item  xs={6} sm={3} key={`${elem.name}-${index}-footer-container`}>
-            <ButtonBase
-              className={classes.FooterSocialContainer}
-              href={elem.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`${elem.name} link`}
-            >
-              <img
-                src={elem.logo}
-                alt={elem.name + "logo"}
-                className={classes.FooterSocialLogo}
-              />
-              <Typography color="textPrimary" component ='h3' className={classes.FooterSocialDescription}>
-                {elem.name}
-              </Typography>
-            </ButtonBase>
-          </Grid>
-        ))}
-        <div className={classes.emailContainer}>
-          <Tooltip disableFocusListener title="Copy">
-            <IconButton aria-label="copy email" onClick={copyEmail}>
-              <CopyIcon/>
-            </IconButton>
-          </Tooltip>
-          <Typography color="textPrimary" component="span" variant="h5">
-            email@ufl.edu
-          </Typography>
+      <div style={{marginLeft: 20, marginRight: 20}}>
+        <div style={{width:"max-content"}}>
+          <Typography color="textPrimary" component='h2' variant='h2' style={{width:"max-content"}}>Contact</Typography>
+          <div className={classes.divider}></div>
         </div>
-      </Grid>
+      </div>
+      <div className={classes.FooterContainerInner}>
+        <Grid container justify="center" className={classes.buttonWrapper}>
+          {social_links.map((elem, index) => (
+            <Grid item  xs={6} sm={3} key={`${elem.name}-${index}-footer-container`}>
+              <ButtonBase
+                className={classes.FooterSocialContainer}
+                href={elem.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${elem.name} link`}
+              >
+                <img
+                  src={elem.logo}
+                  alt={elem.name + "logo"}
+                  className={classes.FooterSocialLogo}
+                />
+                <Typography color="textPrimary" component ='h3' className={classes.FooterSocialDescription}>
+                  {elem.name}
+                </Typography>
+              </ButtonBase>
+            </Grid>
+          ))}
+          <div className={classes.emailContainer}>
+            <Tooltip disableFocusListener title="Copy">
+              <IconButton aria-label="copy email" onClick={copyEmail}>
+                <CopyIcon/>
+              </IconButton>
+            </Tooltip>
+            <Typography color="textPrimary" component="span" variant="h5">
+              email@ufl.edu
+            </Typography>
+          </div>
+        </Grid>
+      </div>
     </footer>
   );
 }
