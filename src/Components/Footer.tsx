@@ -44,6 +44,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('xs')]: {
       width: "95vw"
     },
+    paddingBottom: 20
   },
   FooterContainerInner: {
     position: 'relative',

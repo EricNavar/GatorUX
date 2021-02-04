@@ -41,7 +41,7 @@ export default function Root() {
       h2: {
         fontSize: "2.5rem",
         marginBottom: ".25em",
-        marginTop: ".5em",
+        marginTop: "1.5em",
         fontWeight: 600
       }
     }
