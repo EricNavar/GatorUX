@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import HomeBanner from "../Components/HomeBanner";
-import Header from "./../Components/Header";
+import Header from "./../Components/SimpleHeader";
 import AboutUs from "../Components/AboutUs Section/AboutUs";
 import OfficersBanner from "../Components/OfficersBanner Section/OfficersBanner";
 import Footer from "../Components/Footer";
