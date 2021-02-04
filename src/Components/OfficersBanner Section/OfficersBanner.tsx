@@ -34,7 +34,7 @@ export default function OfficersBanner() {
 
   return (
     <section id="officers-section" className={classes.officerBannerRoot}>
-      <div style={{width:"max-content"}}>
+      <div style={{width:"max-content", marginLeft:20}}>
         <Typography color="textPrimary" component='h2' variant='h2'>Officers</Typography>
         <div className={classes.divider}></div>
       </div>
