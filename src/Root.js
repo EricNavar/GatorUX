@@ -10,7 +10,10 @@ const Error404Page = lazy(() => import("./screens/Error404Page"));
 export default function Root() {
   const myTheme = createMuiTheme({
     palette: {
-      type: 'dark'
+      type: 'dark',
+      background: {
+        default: "#232323"
+      }
     },
     typography: {
       fontFamily: [
