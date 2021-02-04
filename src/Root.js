@@ -14,7 +14,7 @@ export default function Root() {
     },
     typography: {
       fontFamily: [
-        '"Segoe UI"',
+        '"Poppins"',
         '-apple-system',
         'BlinkMacSystemFont',
         'Roboto',
