@@ -25,9 +25,10 @@ const useStyles = makeStyles((theme: Theme) =>
       margin: 8
     },
     aboutUsDescription: {
-      maxWidth: 500,
+      maxWidth: 450,
       fontWeight: 600,
-      fontSize: 20,      
+      fontSize: 24,
+      lineHeight: "2.2rem"      
     },
     aboutUsDescriptionCard: {
       color: "white",
@@ -59,6 +60,9 @@ const useStyles = makeStyles((theme: Theme) =>
       display: "flex",
       justifyContent: "center",
       margin: 8
+    },
+    highlighted: {
+      background: "#5866af"
     }
   })
 );
@@ -81,11 +85,9 @@ export default function AboutUs() {
         spacing={0}
       >
         <Grid item className={classes.aboutUsArticle}>
-          <Paper elevation={3} className={classes.aboutUsDescriptionCard}>
-            <Typography color="textPrimary" component='h3' variant='body1' className={classes.aboutUsDescription}>
-              Gator UX is established for the purpose of promoting and teaching the user experience research and design process to anyone who is interested in the field, as well as to help aspiring designers develop professionally.
-            </Typography>
-          </Paper>
+          <Typography color="textPrimary" component='h3' variant='body1' className={classes.aboutUsDescription}>
+            GatorUX is a collective of aspiring<span className={classes.highlighted}> UX or UI designers</span> who come together to socialize, <span className={classes.highlighted}>discuss industry topics</span>, and learn.
+          </Typography>
         </Grid>
         <Grid item className={classes.carouselWrapper}>
           <Suspense fallback={<div/>}>
