@@ -11,7 +11,7 @@ const useStyles = makeStyles({
   },
   homeBanner: {
     display: "flex",
-    alignItems: "center",
+    alignItems: "start",
     justifyContent: "center",
     flexDirection: "column",
     minHeight: "100vh",
@@ -19,30 +19,41 @@ const useStyles = makeStyles({
     color: "white",
     zIndex: 10
   },
-  darkBackgroundWrapper: {
-    background: "linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.50) 12%, rgba(0,0,0,0.50) 88%, rgba(0,0,0,0) 100%)",
+  textWrapper: {
+    background: "black",
     maxWidth: "100vw",
-    marginBottom: "3rem",
     zIndex: 1,
     paddingLeft: 12,
-    paddingRight: 12
+    paddingRight: 12,
+    paddingTop: 14,
+    paddingBottom: 14,
+    borderTopRightRadius: 8,
+    borderBottomRightRadius: 8
   },
   meetingInfo: {
     fontSize: "1.2rem",
-    marginTop: "1.2rem",
-    zIndex: 2
+    zIndex: 2,
+    textAlign: "center",
   },
   semesterLine: {
     paddingLeft: 24,
     paddingRight: 24,
     fontSize: 24,
     fontWeight: 400,
-    zIndex: 2
+    zIndex: 2,
+    textAlign: "center",
   },
   bannerTitle: {
     lineHeight: 1.1,
-    textAlign:"center"
-  }
+    textAlign: "center",
+    fontSize: "4rem",
+    margin:0
+  },
+  divider: {
+    backgroundColor: '#5264f8',
+    height: 5,
+    marginBottom: 14
+  },
 });
 
 export default function HomeBanner() {
@@ -53,13 +64,14 @@ export default function HomeBanner() {
         <SplashImageComponent />
       </Suspense>
       <div className={classes.homeBanner}>
-        <div className={classes.darkBackgroundWrapper}>
-          <Typography variant='h1' component='h1' className={classes.bannerTitle}>
-            All Things User Experience
-          </Typography>
-        </div>
-        <div className={classes.darkBackgroundWrapper}>
-          <Typography className={classes.semesterLine}>Spring 2021 Meetings</Typography>
+        <div className={classes.textWrapper}>
+          <div style={{margin:"0 1.5rem"}}>
+            <Typography variant='h1' component='h1' className={classes.bannerTitle}>
+              GATOR UX
+            </Typography>
+            <div className={classes.divider}></div>
+          </div>
+          <Typography className={classes.semesterLine}>General body Meetings</Typography>
           <Typography className={classes.meetingInfo}>Mondays, 7:30pm over Zoom</Typography>
         </div>
         <ScrollDownIcon />
