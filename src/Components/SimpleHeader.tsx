@@ -1,6 +1,6 @@
 import React from "react";
 import ButtonBase from "@material-ui/core/ButtonBase";
-import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 //local files
 import GatorUXLogo from "../assets/GatorUXLogo.svg";
 

@@ -1,7 +1,6 @@
 import React, { lazy, Suspense } from "react";
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 const AboutUsCarousel = lazy(() => import('./AboutUsCarousel'));
 
@@ -86,7 +85,7 @@ export default function AboutUs() {
       >
         <Grid item className={classes.aboutUsArticle}>
           <Typography color="textPrimary" component='h3' variant='body1' className={classes.aboutUsDescription}>
-            GatorUX is a collective of aspiring<span className={classes.highlighted}> UX or UI designers</span> who come together to socialize, <span className={classes.highlighted}>discuss industry topics</span>, and learn.
+            GatorUX is a collective of aspiring <span className={classes.highlighted}>UX or UI designers</span> who come together to socialize, <span className={classes.highlighted}>discuss industry topics</span>, and learn.
           </Typography>
         </Grid>
         <Grid item className={classes.carouselWrapper}>

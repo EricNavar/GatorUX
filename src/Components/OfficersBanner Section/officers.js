@@ -1,5 +1,5 @@
-import WinonaPic from "../../assets/Winona.jpg";
-import JohannPic from "../../assets/Johann.jpg";
+import WinonaPic from "../../assets/winona.webp";
+import JohannPic from "../../assets/johann.webp";
 import MaclayPic from "../../assets/maclay.webp";
 import AngelicaPic from "../../assets/angelica.webp";
 
